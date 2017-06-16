@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
   
   root to: 'pages#home'
+  root to: 'home#index'
 end
