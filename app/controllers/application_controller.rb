@@ -5,4 +5,17 @@ class ApplicationController < ActionController::Base
  	include CurrentUserConcern
  	include DefaultPageContent
 
+ 	before_action :set_copyright
+
+ 	def set_copyright
+ 		@copyright = DipeshViewTool::Renderer.copyright 'Dipesh Barakoti', 'All rights reserved'
+ 	end
+end
+
+module DipeshViewTool
+	class Renderer
+		def self.copyright name, msg
+			"@#{Time.now.year} | <b>#{name}</b> #{msg}".html_safe
+		end
+	end
 end
