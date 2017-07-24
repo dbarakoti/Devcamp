@@ -1,4 +1,3 @@
-
 module ApplicationHelper
   def login_helper style = ''
     if current_user.is_a?(GuestUser)
@@ -60,4 +59,16 @@ module ApplicationHelper
     "active" if current_page? path
   end
 
-end
+  def alerts
+    alert = (flash[:alert] || flash[:error] || flash[:notice])
+
+      if alert
+        alert_generatorn alert
+    end
+  end
+
+  def alert_generator msg
+         js add_gritter(msg, title: "Dipesh Barakoti Portfolio", sticky: false) 
+  end
+
+end 
