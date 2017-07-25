@@ -18,14 +18,16 @@
       <div class="site-wrapper-inner">
         <div class="cover-container">
 
-        <%= video_tag(
-            'In-The-Clouds.mp4', 
-            id: 'background',
-            autoplay: true,
-            loop: true,
-            poster: 'processor_cup.jpg'
-          )
-          %>
+          <%= video_tag(
+              'In-The-Clouds.mp4',
+              id: 'background',
+              autoplay: true,
+              loop: true,
+              muted: true,
+              poster: 'home_bg.png'
+            )
+            %>
+
           <%= render "shared/application_nav" %>
 
           <%= yield %>
